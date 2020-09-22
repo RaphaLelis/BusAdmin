@@ -14,7 +14,7 @@ public class conexaobd {
     public static Connection getConnection() throws SQLException{
 	try{
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		JOptionPane.showMessageDialog(null, "Conectado ao banco de dados");
+		JOptionPane.showMessageDialog(null, "Conectado ao Banco de Dados");
 		return DriverManager.getConnection("jdbc:mysql://localhost:3306/login", "root", "");
                 
 	}
