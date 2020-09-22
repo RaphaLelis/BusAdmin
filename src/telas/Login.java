@@ -23,6 +23,10 @@ public class Login extends javax.swing.JFrame {
         
     }
    
+    
+    public boolean checkLogin(String email, String senha){
+        return email.equals(txtemail2.getText()) && senha.equals(txtsenha2.getText());
+    }
 
 
     @SuppressWarnings("unchecked")
@@ -129,6 +133,15 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtemail2ActionPerformed
 
     private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
+     
+        if(checkLogin(txtemail2.getText(), txtsenha2.getText())){
+            JOptionPane.showMessageDialog(null, "Bem vindo meu amigo Raphael Admin!");
+            principal frame = new principal();
+            frame.setVisible(true);
+            dispose();
+        }
+        
+        
     }//GEN-LAST:event_btnloginActionPerformed
 
     private void txtsenha2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsenha2ActionPerformed
