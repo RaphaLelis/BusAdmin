@@ -1,5 +1,10 @@
 package telas;
 import javax.swing.JOptionPane;
+import conexao.conexaobd;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.dao.usuarioDAO;
 
 
 /**
@@ -7,6 +12,8 @@ import javax.swing.JOptionPane;
  * @author Rapha
  */
 public class Login extends javax.swing.JFrame {
+    
+    conexaobd con = new conexaobd();
     
         
 
@@ -137,14 +144,25 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtemail2ActionPerformed
 
+    //Botão de LOGIN!!!
     private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
      
-        if(checkLogin(txtemail2.getText(), txtsenha2.getText())){
-            JOptionPane.showMessageDialog(null, "Bem vindo meu amigo Raphael Admin!");
+        usuarioDAO dao = new usuarioDAO();
+        try 
+        {
+            dao.checkLogin(txtemail2.getText(), txtsenha2.getText());
             principal frame = new principal();
             frame.setVisible(true);
             dispose();
+            
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Não foi possivel fazer o login! Tente novamente.");
         }
+        
+       
         
         
     }//GEN-LAST:event_btnloginActionPerformed
