@@ -12,11 +12,15 @@ import javax.swing.JOptionPane;
  * @author Rapha
  */
 public class conexaobd {
+    
+    private Connection con;
+    public Statement pst;
+    public ResultSet rs;
+    
     public static Connection getConnection() throws SQLException{
         
 	try{
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		JOptionPane.showMessageDialog(null, "Conectado ao Banco de Dados");
 		return DriverManager.getConnection("jdbc:mysql://localhost:3306/login", "root", "");
                 
 	}
@@ -63,6 +67,18 @@ public class conexaobd {
 
         } catch (SQLException ex) {
             Logger.getLogger(conexaobd.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    //METODO EXECUTA SQL
+    public void executeSQL(String sql){
+        try{//Statement navegavel
+            pst = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_READ_ONLY);//CAMINHO DA CONEXÃO
+            rs = pst.executeQuery(sql);// SQL QUE SERA EXECUTADO
+        }
+        catch(SQLException sqlex){
+            JOptionPane.showConfirmDialog(null,"Não foi possivel"+
+                    " executar o Comando SQL, "+sqlex+", o sql passado foi o.: "+sql);
         }
     }
 }

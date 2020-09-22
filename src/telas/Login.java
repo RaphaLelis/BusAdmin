@@ -144,13 +144,14 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtemail2ActionPerformed
 
-    //Botão de LOGIN!!!
+    //Botão de LOGIN / checklogin!!!
     private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
      
         usuarioDAO dao = new usuarioDAO();
         try 
         {
             dao.checkLogin(txtemail2.getText(), txtsenha2.getText());
+            JOptionPane.showMessageDialog(null, "Bem vindo ");
             principal frame = new principal();
             frame.setVisible(true);
             dispose();
