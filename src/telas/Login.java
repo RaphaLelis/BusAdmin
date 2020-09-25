@@ -36,6 +36,7 @@ public class Login extends javax.swing.JFrame {
     public boolean checkLogin(String email, String senha){
         return email.equals(txtemail2.getText()) && senha.equals(txtsenha2.getText());
     }
+    
 
 
     @SuppressWarnings("unchecked")
@@ -48,9 +49,9 @@ public class Login extends javax.swing.JFrame {
         lblemail = new javax.swing.JLabel();
         lblsenha = new javax.swing.JLabel();
         txtemail2 = new javax.swing.JTextField();
-        txtsenha2 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        txtsenha2 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(700, 200));
@@ -83,12 +84,6 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        txtsenha2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtsenha2ActionPerformed(evt);
-            }
-        });
-
         jLabel1.setText("BusAdmin LTDA - 2020");
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rapha\\Documents\\Home office\\Projetos\\JAVA\\project\\img\\busadmin.png")); // NOI18N
@@ -112,8 +107,8 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(lblemail))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtemail2)
-                            .addComponent(txtsenha2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtemail2, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                            .addComponent(txtsenha2)))
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
@@ -126,11 +121,11 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblemail)
                     .addComponent(txtemail2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblsenha)
                     .addComponent(txtsenha2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addGap(25, 25, 25)
                 .addComponent(btnlogin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btncadastro)
@@ -180,10 +175,6 @@ public class Login extends javax.swing.JFrame {
             
     }//GEN-LAST:event_btnloginActionPerformed
 
-    private void txtsenha2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsenha2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtsenha2ActionPerformed
-
     private void btncadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncadastroActionPerformed
         Cadastro frame = new Cadastro();
         frame.setVisible(true);
@@ -227,6 +218,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel lblemail;
     private javax.swing.JLabel lblsenha;
     private javax.swing.JTextField txtemail2;
-    private javax.swing.JTextField txtsenha2;
+    private javax.swing.JPasswordField txtsenha2;
     // End of variables declaration//GEN-END:variables
 }

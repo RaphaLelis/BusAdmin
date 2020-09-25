@@ -48,8 +48,8 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtemail2" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtsenha2" alignment="0" min="-2" pref="218" max="-2" attributes="0"/>
+                          <Component id="txtemail2" pref="218" max="32767" attributes="0"/>
+                          <Component id="txtsenha2" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="jLabel2" alignment="0" min="-2" pref="346" max="-2" attributes="0"/>
@@ -68,12 +68,12 @@
                   <Component id="lblemail" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtemail2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="lblsenha" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtsenha2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblsenha" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtsenha2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Component id="btnlogin" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="btncadastro" min="-2" max="-2" attributes="0"/>
@@ -128,11 +128,6 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtemail2ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtsenha2">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtsenha2ActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="text" type="java.lang.String" value="BusAdmin LTDA - 2020"/>
@@ -144,6 +139,8 @@
           <Image iconType="2" name="C:\Users\Rapha\Documents\Home office\Projetos\JAVA\project\img\busadmin.png"/>
         </Property>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="txtsenha2">
     </Component>
   </SubComponents>
 </Form>
