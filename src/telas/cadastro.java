@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  *
  * @author Rapha
  */
-public class cadastro extends javax.swing.JFrame {
+public class Cadastro extends javax.swing.JFrame {
     
     Connection conecta = null;
     PreparedStatement pst = null;
@@ -40,7 +40,7 @@ public class cadastro extends javax.swing.JFrame {
         String senha = txtsenha.getText();
         
         try {
-            //Linha para criptografar a senha - mascara SHA-256
+            /*Linha para criptografar a senha - mascara SHA-256
             MessageDigest md = MessageDigest.getInstance("SHA-256");
             //Criando a linha de byte, pegará todas os bytes e irá fazer a conversão para stringbuilder
             byte MessageDigest[] = md.digest(senha.getBytes("UTF-8"));
@@ -51,12 +51,12 @@ public class cadastro extends javax.swing.JFrame {
                 sb.append(String.format("%02X", 0XFF & b));
                 
             }
-            String senhaHex = sb.toString();
+            String senhaHex = sb.toString();*/
             
             pst = conecta.prepareStatement(sql);
                                     
             pst.setString(1,txtemail.getText());
-            pst.setString(2,senhaHex);
+            pst.setString(2,txtsenha.getText());
             pst.setString(3,txtnome.getText());
             pst.setString(4,txtsobrenome.getText());
             pst.setString(5,txtrua.getText());
@@ -72,17 +72,18 @@ public class cadastro extends javax.swing.JFrame {
             limpar();
 
                   
-        } catch (SQLException ex) {
+        } 
+        catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Não foi possivel fazer o seu cadastro! Por gentileza tentar novamente.");
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (NoSuchAlgorithmException ex) {
+        } /*catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(cadastro.class.getName()).log(Level.SEVERE, null, ex);
         } catch (UnsupportedEncodingException ex) {
             Logger.getLogger(cadastro.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
         
     }
-    public cadastro() {
+    public Cadastro() {
         initComponents();
         try {
             conecta = conexao.conexaobd.getConnection();
@@ -296,11 +297,9 @@ public class cadastro extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(127, 127, 127)
                 .addComponent(jLabel1)
@@ -345,20 +344,21 @@ public class cadastro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new cadastro().setVisible(true);
+                new Cadastro().setVisible(true);
             }
         });
     }

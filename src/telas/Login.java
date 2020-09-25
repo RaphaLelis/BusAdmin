@@ -4,7 +4,9 @@ import conexao.conexaobd;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.dao.usuarioDAO;
+import model.dao.UsuarioDAO;
+import java.sql.Connection;
+import telas.Cadastro;
 
 
 /**
@@ -13,7 +15,7 @@ import model.dao.usuarioDAO;
  */
 public class Login extends javax.swing.JFrame {
     
-    conexaobd con = new conexaobd();
+    public String Acesso;//Variavel global para armazenaro o acesso do login
     
         
 
@@ -146,26 +148,36 @@ public class Login extends javax.swing.JFrame {
 
     //Botão de LOGIN / checklogin!!!
     private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
-     
-        usuarioDAO dao = new usuarioDAO();
-        try 
-        {
-            dao.checkLogin(txtemail2.getText(), txtsenha2.getText());
-            JOptionPane.showMessageDialog(null, "Bem vindo ");
-            principal frame = new principal();
-            frame.setVisible(true);
-            dispose();
+                    
+        try{
+           
+           Connection con = conexaobd.getConnection(); 
+           conexaobd conn = new conexaobd(con);
+           String senha = txtsenha2.getText();
+           
+           
+           conn.executeSQL("select * from cadastro where email='" +txtemail2.getText()+"'");
+           conn.rs.first();
+
+           if(conn.rs.getString("senha").equals(senha)){  
+               JOptionPane.showMessageDialog(null, "Bem vindo Sr." + conn.rs.getString("nome")+ " "+ conn.rs.getString("sobrenome")+"!");
+               Principal frame = new Principal();
+               frame.setVisible(true);
+               dispose();
+           }
+           else
+           {
+               JOptionPane.showMessageDialog(rootPane, "Senha incorreta!");
+           }
+               
             
-        } 
-        catch (SQLException ex) 
-        {
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, "Não foi possivel fazer o login! Tente novamente.");
         }
-        
-       
-        
-        
+        catch(SQLException ex){
+           JOptionPane.showMessageDialog(rootPane, "Usuário não cadastrado! Favor fazer o cadastro..." + ex);
+           Cadastro frame = new Cadastro();
+           frame.setVisible(true);
+        }
+            
     }//GEN-LAST:event_btnloginActionPerformed
 
     private void txtsenha2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsenha2ActionPerformed
@@ -173,7 +185,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtsenha2ActionPerformed
 
     private void btncadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncadastroActionPerformed
-        cadastro frame = new cadastro();
+        Cadastro frame = new Cadastro();
         frame.setVisible(true);
     }//GEN-LAST:event_btncadastroActionPerformed
 

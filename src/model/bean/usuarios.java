@@ -9,7 +9,7 @@ package model.bean;
  *
  * @author Rapha
  */
-public class usuarios {
+public class Usuarios {
     
     private int id;
     private String email;

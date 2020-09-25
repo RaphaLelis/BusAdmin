@@ -17,6 +17,10 @@ public class conexaobd {
     public Statement pst;
     public ResultSet rs;
     
+    public conexaobd(Connection con){
+        this.con = con; 
+    }
+    
     public static Connection getConnection() throws SQLException{
         
 	try{
@@ -73,7 +77,7 @@ public class conexaobd {
     //METODO EXECUTA SQL
     public void executeSQL(String sql){
         try{//Statement navegavel
-            pst = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_READ_ONLY);//CAMINHO DA CONEXÃO
+            pst = con.createStatement(rs.TYPE_SCROLL_SENSITIVE,rs.CONCUR_READ_ONLY);//CAMINHO DA CONEXÃO (settar todos os dados)
             rs = pst.executeQuery(sql);// SQL QUE SERA EXECUTADO
         }
         catch(SQLException sqlex){
