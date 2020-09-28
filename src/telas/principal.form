@@ -119,6 +119,9 @@
           <Image iconType="3" name="/img/pagamentos.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblpagamentoMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblrota">
       <Properties>
@@ -126,6 +129,9 @@
           <Image iconType="3" name="/img/rota.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblrotaMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblpesquisar">
       <Properties>
@@ -133,6 +139,9 @@
           <Image iconType="3" name="/img/pesquisar.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblpesquisarMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>

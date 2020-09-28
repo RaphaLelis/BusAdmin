@@ -47,10 +47,25 @@ public class Principal extends javax.swing.JFrame {
         });
 
         lblpagamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pagamentos.png"))); // NOI18N
+        lblpagamento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblpagamentoMouseClicked(evt);
+            }
+        });
 
         lblrota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/rota.png"))); // NOI18N
+        lblrota.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblrotaMouseClicked(evt);
+            }
+        });
 
         lblpesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pesquisar.png"))); // NOI18N
+        lblpesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblpesquisarMouseClicked(evt);
+            }
+        });
 
         jLabel6.setText("BusAdmin LTDA - 2020");
 
@@ -111,6 +126,24 @@ public class Principal extends javax.swing.JFrame {
         frame.setVisible(true);
         
     }//GEN-LAST:event_lbladdMouseClicked
+
+    private void lblrotaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblrotaMouseClicked
+        dispose();
+        Rotas frame = new Rotas();
+        frame.setVisible(true);
+    }//GEN-LAST:event_lblrotaMouseClicked
+
+    private void lblpagamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblpagamentoMouseClicked
+        dispose();
+        Pagamentos frame = new Pagamentos();
+        frame.setVisible(true);
+    }//GEN-LAST:event_lblpagamentoMouseClicked
+
+    private void lblpesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblpesquisarMouseClicked
+        dispose();
+        Pesquisar frame = new Pesquisar();
+        frame.setVisible(true);
+    }//GEN-LAST:event_lblpesquisarMouseClicked
 
 
     public static void main(String args[]) {
