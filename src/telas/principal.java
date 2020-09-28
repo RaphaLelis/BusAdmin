@@ -106,8 +106,10 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lbladdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbladdMouseClicked
+        dispose();
         CadastroKid frame = new CadastroKid();
         frame.setVisible(true);
+        
     }//GEN-LAST:event_lbladdMouseClicked
 
 
