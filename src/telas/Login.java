@@ -86,7 +86,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel1.setText("BusAdmin LTDA - 2020");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rapha\\Documents\\Home office\\Projetos\\JAVA\\project\\img\\busadmin.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/busadmin.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

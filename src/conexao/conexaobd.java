@@ -22,6 +22,7 @@ public class conexaobd {
     }
     
     public static Connection getConnection() throws SQLException{
+        //SET GLOBAL time_zone = '+3:00';
         
 	try{
 		Class.forName("com.mysql.cj.jdbc.Driver");
