@@ -226,7 +226,7 @@
                       <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                       <Component id="btncadastrarkid" min="-2" pref="128" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnvoltar" min="-2" pref="128" max="-2" attributes="0"/>
+                      <Component id="btnvoltar" min="-2" pref="130" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -250,10 +250,10 @@
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jPanel3" min="-2" pref="129" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btncadastrarkid" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnvoltar" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="btncadastrarkid" pref="36" max="32767" attributes="0"/>
+                  <Component id="btnvoltar" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
